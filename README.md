@@ -1,62 +1,66 @@
 # JusticeConnect
 
-A comprehensive SaaS platform for the Botswana Justice Department, designed to modernize court operations and improve access to justice through digital transformation.
+A modern digital platform designed specifically for the Botswana Justice Department to streamline court operations, improve efficiency, and enhance access to justice through cutting-edge technology.
 
-## 🚀 Overview
+## 🚀 Key Features
 
-JusticeConnect is a modern web application built with Next.js and Firebase, specifically designed for the Botswana Justice Department. The platform streamlines court operations with features like handwriting-to-text conversion, case management, digital document storage, and automated scheduling.
-
-## ✨ Key Features
-
-### Core Functionality
-- **Case Management System** - Digital case filing, tracking, and management
-- **Handwriting-to-Text Conversion** - OCR technology for document digitization
-- **Digital Document Management** - Secure storage and retrieval of court documents
-- **Court Scheduling System** - Automated hearing management and resource allocation
-- **Multi-language Support** - English and Setswana language interfaces
-
-### Advanced Features
-- **Analytics & Reporting** - Performance metrics and custom reports
-- **Mobile-First Design** - Responsive interface for all devices
-- **Real-time Updates** - Live notifications and status updates
-- **Integration Capabilities** - Government systems and payment gateways
-- **Role-based Access Control** - Secure user permissions and authentication
+- **Case Management**: Digital case filing, tracking, and management with real-time updates
+- **OCR Technology**: Convert handwritten documents to digital text with high accuracy
+- **Court Scheduling**: Automated hearing management with conflict resolution
+- **User Management**: Role-based access control with secure authentication
+- **Security & Compliance**: Enterprise-grade security with full compliance
+- **Analytics & Reporting**: Comprehensive analytics and reporting tools
 
 ## 🛠 Technology Stack
 
 ### Frontend
-- **Next.js 14+** - React framework with App Router
+- **Next.js 14** - React framework with App Router
 - **TypeScript** - Type-safe development
 - **Tailwind CSS** - Utility-first CSS framework
 - **Headless UI** - Accessible UI components
-- **React Hook Form** - Form handling and validation
+- **React Hook Form** - Form handling
+- **Zustand** - State management
+- **React Query** - Data fetching and caching
 
 ### Backend & Database
-- **Firebase Firestore** - NoSQL database
-- **Firebase Authentication** - User authentication and authorization
-- **Firebase Storage** - Document and file storage
-- **Firebase Functions** - Serverless backend functions
-- **Firebase Hosting** - Application hosting
+- **Supabase** - PostgreSQL database with real-time subscriptions
+- **Supabase Auth** - Authentication and authorization
+- **Supabase Storage** - File storage and management
+- **Supabase Edge Functions** - Serverless functions
 
-### Third-party Services
+### Infrastructure
+- **Vercel** - Deployment and hosting
+- **Cloudinary** - Image optimization
 - **Google Cloud Vision API** - OCR and handwriting recognition
 - **Twilio** - SMS notifications
-- **SendGrid** - Email services
-- **Cloudinary** - Image optimization
+- **SendGrid** - Email notifications
 - **Sentry** - Error tracking and monitoring
 
-## 📋 Documentation
+### Testing
+- **Jest** - Unit testing
+- **Playwright** - End-to-end testing
 
-### Project Documentation
-- **[Product Requirements Document (PRD)](JusticeConnect_PRD.md)** - Comprehensive product specifications and requirements
-- **[Technical Architecture](Technical_Architecture.md)** - Detailed system design and implementation guide
-- **[Project Setup Guide](Project_Setup_Guide.md)** - Step-by-step development environment setup
+## 📚 Documentation
 
-### Quick Start
+- [Product Requirements Document](./JusticeConnect_PRD.md) - Complete product specification
+- [Technical Architecture](./Technical_Architecture.md) - System design and architecture
+- [Project Setup Guide](./Project_Setup_Guide.md) - Development environment setup
+- [Deployment Guide](./DEPLOYMENT_GUIDE.md) - Deployment instructions
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+- Supabase account
+- Vercel account
+
+### Local Development
+
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-org/justiceconnect.git
-   cd justiceconnect
+   git clone https://github.com/Beardparlor/JusticeConnect.git
+   cd JusticeConnect
    ```
 
 2. **Install dependencies**
@@ -67,62 +71,102 @@ JusticeConnect is a modern web application built with Next.js and Firebase, spec
 3. **Set up environment variables**
    ```bash
    cp .env.example .env.local
-   # Edit .env.local with your Firebase configuration
+   ```
+   Edit `.env.local` with your Supabase credentials:
+   ```
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
    ```
 
-4. **Start development server**
+4. **Set up Supabase database**
+   - Create a new Supabase project
+   - Run the SQL schema from `supabase-schema.sql` in your Supabase SQL editor
+   - Configure authentication settings
+
+5. **Start development server**
    ```bash
    npm run dev
    ```
 
-5. **Open your browser**
+6. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## 🏗 Project Structure
 
 ```
-justiceconnect/
+JusticeConnect/
 ├── src/
-│   ├── app/                    # Next.js App Router pages
-│   │   ├── (auth)/            # Authentication routes
-│   │   ├── (dashboard)/       # Dashboard and feature routes
-│   │   └── api/               # API routes
-│   ├── components/             # Reusable UI components
-│   ├── lib/                   # Utility libraries and configurations
-│   ├── hooks/                 # Custom React hooks
-│   ├── stores/                # State management (Zustand)
-│   └── types/                 # TypeScript type definitions
-├── public/                    # Static assets
-├── firebase/                  # Firebase configuration
-├── tests/                     # Test files
-└── docs/                      # Documentation
+│   ├── app/                 # Next.js App Router pages
+│   ├── components/          # Reusable React components
+│   ├── lib/
+│   │   └── supabase/       # Supabase configuration
+│   ├── hooks/              # Custom React hooks
+│   ├── stores/             # Zustand state stores
+│   ├── types/              # TypeScript type definitions
+│   └── utils/              # Utility functions
+├── public/                 # Static assets
+├── supabase-schema.sql     # Database schema
+├── env.example             # Environment variables template
+└── README.md              # This file
 ```
 
 ## 🚀 Deployment
 
-### Prerequisites
-- Firebase project configured
-- Environment variables set up
-- Firebase CLI installed
+### Vercel Deployment
 
-### Deployment Commands
+1. **Connect to Vercel**
+   - Push your code to GitHub
+   - Connect your repository to Vercel
+   - Configure environment variables in Vercel dashboard
+
+2. **Set up Supabase**
+   - Create a Supabase project
+   - Run the database schema
+   - Configure authentication
+   - Set up storage buckets
+
+3. **Deploy**
+   - Vercel will automatically deploy on push to main branch
+   - Your app will be live at your Vercel URL
+
+### Environment Variables
+
+Required environment variables for production:
+
 ```bash
-# Build the application
-npm run build
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
 
-# Deploy to Firebase Hosting
-npm run firebase:deploy:hosting
+# OCR Services
+GOOGLE_CLOUD_VISION_API_KEY=your_vision_api_key
 
-# Deploy all Firebase services
-npm run firebase:deploy
+# Notifications
+TWILIO_ACCOUNT_SID=your_twilio_account_sid
+TWILIO_AUTH_TOKEN=your_twilio_auth_token
+SENDGRID_API_KEY=your_sendgrid_api_key
+
+# Image Optimization
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+
+# Application
+NEXT_PUBLIC_APP_NAME=JusticeConnect
+NEXT_PUBLIC_APP_URL=https://your-app.vercel.app
+
+# Error Tracking
+SENTRY_DSN=your_sentry_dsn
 ```
 
 ## 🧪 Testing
 
-### Running Tests
+### Run Tests
 ```bash
 # Unit tests
-npm run test
+npm test
 
 # E2E tests
 npm run e2e
@@ -131,107 +175,69 @@ npm run e2e
 npm run test:coverage
 ```
 
-### Test Structure
-- **Unit Tests** - Jest for component and utility testing
-- **Integration Tests** - API and database testing
-- **E2E Tests** - Playwright for end-to-end testing
-- **Visual Tests** - Percy for visual regression testing
-
 ## 🔒 Security
 
-### Security Features
-- **Role-based Access Control** - Granular user permissions
-- **Data Encryption** - End-to-end encryption for sensitive data
-- **Audit Logging** - Comprehensive activity tracking
-- **Firebase Security Rules** - Database and storage security
-- **HTTPS Enforcement** - Secure communication protocols
-
-### Compliance
-- **Botswana Data Protection Act** - Full regulatory compliance
-- **Government Standards** - IT security standards adherence
-- **ISO 27001** - International security standards
+- **Row Level Security (RLS)** - Database-level security policies
+- **Authentication** - Supabase Auth with role-based access
+- **Authorization** - Role-based permissions system
+- **Data Encryption** - End-to-end encryption
+- **Audit Logging** - Complete audit trail
+- **Compliance** - Botswana data protection regulations
 
 ## 📊 Performance
 
-### Performance Metrics
-- **Page Load Time** - < 2 seconds
-- **Uptime** - 99.9% availability
-- **Scalability** - Support for 1000+ concurrent users
-- **Mobile Optimization** - Low-bandwidth connection support
-
-### Optimization Features
-- **Image Optimization** - WebP and AVIF formats
-- **Code Splitting** - Dynamic imports and lazy loading
-- **Caching Strategy** - CDN and browser caching
-- **Bundle Optimization** - Tree shaking and minification
+- **Optimized Images** - Cloudinary integration
+- **Caching** - React Query for data caching
+- **CDN** - Vercel Edge Network
+- **Database Indexes** - Optimized queries
+- **Lazy Loading** - Component and route optimization
 
 ## 🤝 Contributing
 
-### Development Workflow
-1. **Fork the repository**
-2. **Create a feature branch** - `git checkout -b feature/amazing-feature`
-3. **Make your changes** - Follow the coding standards
-4. **Run tests** - Ensure all tests pass
-5. **Submit a pull request** - Detailed description of changes
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-### Code Standards
-- **TypeScript** - Strict type checking enabled
-- **ESLint** - Code linting and formatting
-- **Prettier** - Consistent code formatting
-- **Conventional Commits** - Standardized commit messages
+## 📋 Roadmap
 
-## 📈 Roadmap
+### Phase 1 (MVP) - ✅ Complete
+- [x] Basic case management
+- [x] User authentication
+- [x] Document upload
+- [x] Court scheduling
 
-### Phase 1: MVP (Months 1-3)
-- [x] Basic case management system
-- [x] User authentication and authorization
-- [x] Document upload and storage
-- [x] Simple reporting
+### Phase 2 (Enhancement) - 🚧 In Progress
+- [ ] OCR integration
+- [ ] Advanced reporting
+- [ ] Mobile application
+- [ ] API integrations
 
-### Phase 2: Core Features (Months 4-6)
-- [ ] Handwriting-to-text conversion
-- [ ] Advanced case tracking
-- [ ] Court scheduling system
-- [ ] Mobile-responsive design
-
-### Phase 3: Advanced Features (Months 7-9)
-- [ ] Analytics and reporting dashboard
-- [ ] Integration capabilities
-- [ ] Advanced search and filtering
-- [ ] Performance optimizations
-
-### Phase 4: Scale & Enhance (Months 10-12)
-- [ ] Multi-court deployment
+### Phase 3 (Advanced Features)
+- [ ] AI-powered case analysis
 - [ ] Advanced analytics
-- [ ] API development
-- [ ] Third-party integrations
+- [ ] Multi-language support
+- [ ] Advanced security features
 
 ## 📞 Support
 
-### Getting Help
-- **Documentation** - Check the comprehensive documentation
-- **Issues** - Report bugs and feature requests on GitHub
-- **Discussions** - Join community discussions
-- **Email Support** - support@justiceconnect.bw
-
-### Contact Information
-- **Project Lead** - [Your Name](mailto:your.email@example.com)
-- **Technical Lead** - [Tech Lead](mailto:tech.lead@example.com)
-- **Support Team** - [Support](mailto:support@justiceconnect.bw)
+For support and questions:
+- **Email**: support@justiceconnect.bw
+- **Documentation**: [Project Setup Guide](./Project_Setup_Guide.md)
+- **Issues**: [GitHub Issues](https://github.com/Beardparlor/JusticeConnect/issues)
 
 ## 📄 License
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
-- **Botswana Justice Department** - For collaboration and requirements
-- **Firebase Team** - For excellent documentation and tools
-- **Next.js Team** - For the amazing React framework
-- **Open Source Community** - For the incredible libraries and tools
+- **Botswana Justice Department** - For the vision and requirements
+- **Supabase** - For the excellent database platform
+- **Vercel** - For seamless deployment
+- **Next.js Team** - For the amazing framework
 
 ---
 
-**JusticeConnect** - Empowering Botswana's Justice System Through Technology
-
-*Built with ❤️ for the people of Botswana* 
+**Built with ❤️ for the people of Botswana** 🇧🇼⚖️ 
