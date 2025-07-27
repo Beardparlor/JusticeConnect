@@ -11,6 +11,11 @@ export default function HomePage() {
       <div className="absolute top-40 right-20 w-16 h-16 bg-botswana-300 rounded-full opacity-30 animate-float" style={{animationDelay: '1s'}}></div>
       <div className="absolute bottom-40 left-20 w-12 h-12 bg-botswana-400 rounded-full opacity-40 animate-float" style={{animationDelay: '2s'}}></div>
 
+      {/* Test Element to Verify Styling */}
+      <div className="fixed top-4 right-4 bg-botswana-500 text-white px-4 py-2 rounded-lg shadow-botswana animate-glow">
+        🎨 Styling Active
+      </div>
+
       {/* Header */}
       <header className="relative bg-white/90 backdrop-blur-sm shadow-botswana border-b border-botswana-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
