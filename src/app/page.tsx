@@ -1,14 +1,4 @@
 import Link from 'next/link'
-import { 
-  ScaleIcon, 
-  DocumentTextIcon, 
-  CalendarIcon, 
-  UserGroupIcon,
-  ShieldCheckIcon,
-  ChartBarIcon,
-  CogIcon,
-  ArrowRightIcon
-} from '@heroicons/react/24/outline'
 
 export default function HomePage() {
   return (
@@ -18,7 +8,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
-              <ScaleIcon className="h-8 w-8 text-blue-600" />
+              <div className="h-8 w-8 text-blue-600">⚖️</div>
               <span className="ml-2 text-xl font-bold text-gray-900">JusticeConnect</span>
             </div>
             <nav className="hidden md:flex space-x-8">
@@ -41,7 +31,7 @@ export default function HomePage() {
               </Link>
               <Link 
                 href="/register" 
-                className="btn-primary"
+                className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-blue-600 text-white hover:bg-blue-700 h-10 py-2 px-4"
               >
                 Get Started
               </Link>
@@ -64,10 +54,10 @@ export default function HomePage() {
               Streamline court operations, improve efficiency, and enhance access to justice through cutting-edge technology.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/demo" className="btn-primary text-lg px-8 py-3">
+              <Link href="/demo" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-blue-600 text-white hover:bg-blue-700 h-10 py-2 px-4 text-lg px-8 py-3">
                 Watch Demo
               </Link>
-              <Link href="/register" className="btn-outline text-lg px-8 py-3">
+              <Link href="/register" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-accent hover:text-accent-foreground h-10 py-2 px-4 text-lg px-8 py-3">
                 Start Free Trial
               </Link>
             </div>
@@ -89,10 +79,10 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Case Management */}
-            <div className="card p-6 hover:shadow-lg transition-shadow">
+            <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center mb-4">
                 <div className="p-2 bg-blue-100 rounded-lg">
-                  <DocumentTextIcon className="h-6 w-6 text-blue-600" />
+                  <div className="h-6 w-6 text-blue-600">📄</div>
                 </div>
                 <h3 className="ml-3 text-xl font-semibold text-gray-900">Case Management</h3>
               </div>
@@ -108,10 +98,10 @@ export default function HomePage() {
             </div>
 
             {/* Handwriting Recognition */}
-            <div className="card p-6 hover:shadow-lg transition-shadow">
+            <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center mb-4">
                 <div className="p-2 bg-green-100 rounded-lg">
-                  <CogIcon className="h-6 w-6 text-green-600" />
+                  <div className="h-6 w-6 text-green-600">🔍</div>
                 </div>
                 <h3 className="ml-3 text-xl font-semibold text-gray-900">OCR Technology</h3>
               </div>
@@ -127,10 +117,10 @@ export default function HomePage() {
             </div>
 
             {/* Court Scheduling */}
-            <div className="card p-6 hover:shadow-lg transition-shadow">
+            <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center mb-4">
                 <div className="p-2 bg-purple-100 rounded-lg">
-                  <CalendarIcon className="h-6 w-6 text-purple-600" />
+                  <div className="h-6 w-6 text-purple-600">📅</div>
                 </div>
                 <h3 className="ml-3 text-xl font-semibold text-gray-900">Court Scheduling</h3>
               </div>
@@ -146,10 +136,10 @@ export default function HomePage() {
             </div>
 
             {/* User Management */}
-            <div className="card p-6 hover:shadow-lg transition-shadow">
+            <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center mb-4">
                 <div className="p-2 bg-orange-100 rounded-lg">
-                  <UserGroupIcon className="h-6 w-6 text-orange-600" />
+                  <div className="h-6 w-6 text-orange-600">👥</div>
                 </div>
                 <h3 className="ml-3 text-xl font-semibold text-gray-900">User Management</h3>
               </div>
@@ -165,10 +155,10 @@ export default function HomePage() {
             </div>
 
             {/* Security & Compliance */}
-            <div className="card p-6 hover:shadow-lg transition-shadow">
+            <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center mb-4">
                 <div className="p-2 bg-red-100 rounded-lg">
-                  <ShieldCheckIcon className="h-6 w-6 text-red-600" />
+                  <div className="h-6 w-6 text-red-600">🔒</div>
                 </div>
                 <h3 className="ml-3 text-xl font-semibold text-gray-900">Security & Compliance</h3>
               </div>
@@ -184,10 +174,10 @@ export default function HomePage() {
             </div>
 
             {/* Analytics & Reporting */}
-            <div className="card p-6 hover:shadow-lg transition-shadow">
+            <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center mb-4">
                 <div className="p-2 bg-indigo-100 rounded-lg">
-                  <ChartBarIcon className="h-6 w-6 text-indigo-600" />
+                  <div className="h-6 w-6 text-indigo-600">📊</div>
                 </div>
                 <h3 className="ml-3 text-xl font-semibold text-gray-900">Analytics & Reporting</h3>
               </div>
@@ -221,7 +211,7 @@ export default function HomePage() {
               className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold text-lg transition-colors inline-flex items-center"
             >
               Start Free Trial
-              <ArrowRightIcon className="ml-2 h-5 w-5" />
+              <span className="ml-2 h-5 w-5">→</span>
             </Link>
             <Link 
               href="/contact" 
@@ -239,7 +229,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center mb-4">
-                <ScaleIcon className="h-8 w-8 text-blue-400" />
+                <div className="h-8 w-8 text-blue-400">⚖️</div>
                 <span className="ml-2 text-xl font-bold">JusticeConnect</span>
               </div>
               <p className="text-gray-400 mb-4">
