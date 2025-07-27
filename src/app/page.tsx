@@ -2,27 +2,37 @@ import Link from 'next/link'
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-botswana-50 via-white to-botswana-100 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-botswana-pattern opacity-30"></div>
+      
+      {/* Floating Elements */}
+      <div className="absolute top-20 left-10 w-20 h-20 bg-botswana-200 rounded-full opacity-20 animate-float"></div>
+      <div className="absolute top-40 right-20 w-16 h-16 bg-botswana-300 rounded-full opacity-30 animate-float" style={{animationDelay: '1s'}}></div>
+      <div className="absolute bottom-40 left-20 w-12 h-12 bg-botswana-400 rounded-full opacity-40 animate-float" style={{animationDelay: '2s'}}></div>
+
       {/* Header */}
-      <header className="bg-white shadow-sm border-b">
+      <header className="relative bg-white/90 backdrop-blur-sm shadow-botswana border-b border-botswana-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
-              <div className="h-8 w-8 text-blue-600">⚖️</div>
-              <span className="ml-2 text-xl font-bold text-gray-900">JusticeConnect</span>
+              <div className="h-10 w-10 bg-gradient-to-br from-botswana-500 to-botswana-600 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-botswana animate-glow">
+                ⚖️
+              </div>
+              <span className="ml-3 text-2xl font-bold gradient-text">JusticeConnect</span>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <Link href="#about" className="text-gray-600 hover:text-blue-600 transition-colors">
+              <Link href="#about" className="nav-link">
                 About
               </Link>
-              <Link href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors">
+              <Link href="#contact" className="nav-link">
                 Contact
               </Link>
             </nav>
             <div className="flex items-center space-x-4">
               <Link 
                 href="/login" 
-                className="text-gray-600 hover:text-blue-600 transition-colors"
+                className="btn btn-outline px-6 py-2"
               >
                 Login
               </Link>
@@ -32,75 +42,109 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Botswana
-              <span className="text-blue-600"> Justice </span>
-              System
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              JusticeConnect is the official digital platform of the Botswana Justice Department. 
-              Access your court's case management system and streamline judicial operations.
-            </p>
-            <div className="mb-12">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-6">
+            <div className="mb-8">
+              <h1 className="heading-responsive font-bold text-botswanaBlack-900 mb-6">
+                Botswana
+                <span className="gradient-text"> Justice </span>
+                System
+              </h1>
+              <p className="text-responsive text-botswanaBlack-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+                JusticeConnect is the official digital platform of the Botswana Justice Department. 
+                Access your court's case management system and streamline judicial operations with 
+                secure, efficient digital tools.
+              </p>
+            </div>
+            
+            <div className="mb-16">
+              <h2 className="text-3xl font-bold text-botswanaBlack-800 mb-8">
                 Select Your Court
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 <Link 
                   href="/login?court=high-court-appeal" 
-                  className="bg-white border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg rounded-lg p-6 text-center transition-all duration-200"
+                  className="court-card group"
                 >
-                  <div className="text-3xl mb-3">🏛️</div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">High Court of Appeal</h3>
-                  <p className="text-sm text-gray-600">Supreme appellate jurisdiction</p>
+                  <div className="court-icon bg-gradient-to-br from-botswana-500 to-botswana-600 text-white">
+                    🏛️
+                  </div>
+                  <h3 className="text-xl font-bold text-botswanaBlack-900 mb-3">High Court of Appeal</h3>
+                  <p className="text-botswanaBlack-600">Supreme appellate jurisdiction</p>
+                  <div className="mt-4 text-botswana-500 font-medium group-hover:text-botswana-600 transition-colors">
+                    Access Court →
+                  </div>
                 </Link>
                 
                 <Link 
                   href="/login?court=high-court" 
-                  className="bg-white border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg rounded-lg p-6 text-center transition-all duration-200"
+                  className="court-card group"
                 >
-                  <div className="text-3xl mb-3">⚖️</div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">High Court</h3>
-                  <p className="text-sm text-gray-600">Superior court jurisdiction</p>
+                  <div className="court-icon bg-gradient-to-br from-botswana-500 to-botswana-600 text-white">
+                    ⚖️
+                  </div>
+                  <h3 className="text-xl font-bold text-botswanaBlack-900 mb-3">High Court</h3>
+                  <p className="text-botswanaBlack-600">Superior court jurisdiction</p>
+                  <div className="mt-4 text-botswana-500 font-medium group-hover:text-botswana-600 transition-colors">
+                    Access Court →
+                  </div>
                 </Link>
                 
                 <Link 
                   href="/login?court=industrial-court" 
-                  className="bg-white border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg rounded-lg p-6 text-center transition-all duration-200"
+                  className="court-card group"
                 >
-                  <div className="text-3xl mb-3">🏢</div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Industrial Court</h3>
-                  <p className="text-sm text-gray-600">Labor and employment disputes</p>
+                  <div className="court-icon bg-gradient-to-br from-botswana-500 to-botswana-600 text-white">
+                    🏢
+                  </div>
+                  <h3 className="text-xl font-bold text-botswanaBlack-900 mb-3">Industrial Court</h3>
+                  <p className="text-botswanaBlack-600">Labor and employment disputes</p>
+                  <div className="mt-4 text-botswana-500 font-medium group-hover:text-botswana-600 transition-colors">
+                    Access Court →
+                  </div>
                 </Link>
                 
                 <Link 
                   href="/login?court=magistrate-court" 
-                  className="bg-white border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg rounded-lg p-6 text-center transition-all duration-200"
+                  className="court-card group"
                 >
-                  <div className="text-3xl mb-3">📋</div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Magistrate Court</h3>
-                  <p className="text-sm text-gray-600">Lower court jurisdiction</p>
+                  <div className="court-icon bg-gradient-to-br from-botswana-500 to-botswana-600 text-white">
+                    📋
+                  </div>
+                  <h3 className="text-xl font-bold text-botswanaBlack-900 mb-3">Magistrate Court</h3>
+                  <p className="text-botswanaBlack-600">Lower court jurisdiction</p>
+                  <div className="mt-4 text-botswana-500 font-medium group-hover:text-botswana-600 transition-colors">
+                    Access Court →
+                  </div>
                 </Link>
                 
                 <Link 
                   href="/login?court=customary-high-court-appeal" 
-                  className="bg-white border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg rounded-lg p-6 text-center transition-all duration-200"
+                  className="court-card group"
                 >
-                  <div className="text-3xl mb-3">🌿</div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Customary High Court of Appeal</h3>
-                  <p className="text-sm text-gray-600">Customary law appellate</p>
+                  <div className="court-icon bg-gradient-to-br from-botswana-500 to-botswana-600 text-white">
+                    🌿
+                  </div>
+                  <h3 className="text-xl font-bold text-botswanaBlack-900 mb-3">Customary High Court of Appeal</h3>
+                  <p className="text-botswanaBlack-600">Customary law appellate</p>
+                  <div className="mt-4 text-botswana-500 font-medium group-hover:text-botswana-600 transition-colors">
+                    Access Court →
+                  </div>
                 </Link>
                 
                 <Link 
                   href="/login?court=customary-court" 
-                  className="bg-white border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg rounded-lg p-6 text-center transition-all duration-200"
+                  className="court-card group"
                 >
-                  <div className="text-3xl mb-3">🏘️</div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Customary Court</h3>
-                  <p className="text-sm text-gray-600">Traditional law jurisdiction</p>
+                  <div className="court-icon bg-gradient-to-br from-botswana-500 to-botswana-600 text-white">
+                    🏘️
+                  </div>
+                  <h3 className="text-xl font-bold text-botswanaBlack-900 mb-3">Customary Court</h3>
+                  <p className="text-botswanaBlack-600">Traditional law jurisdiction</p>
+                  <div className="mt-4 text-botswana-500 font-medium group-hover:text-botswana-600 transition-colors">
+                    Access Court →
+                  </div>
                 </Link>
               </div>
             </div>
@@ -109,129 +153,196 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 bg-white">
+      <section id="features" className="relative py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-botswanaBlack-900 mb-6">
               Government Digital Justice Platform
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Streamlining court operations across Botswana's judicial system with secure, efficient digital tools.
+            <p className="text-xl text-botswanaBlack-600 max-w-3xl mx-auto leading-relaxed">
+              Streamlining court operations across Botswana's judicial system with secure, 
+              efficient digital tools designed for government use.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Case Management */}
-            <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 hover:shadow-lg transition-shadow">
-              <div className="flex items-center mb-4">
-                <div className="p-2 bg-blue-100 rounded-lg">
-                  <div className="h-6 w-6 text-blue-600">📄</div>
-                </div>
-                <h3 className="ml-3 text-xl font-semibold text-gray-900">Digital Case Management</h3>
+            {/* Digital Case Management */}
+            <div className="feature-card">
+              <div className="feature-icon bg-gradient-to-br from-botswana-500 to-botswana-600 text-white">
+                📄
               </div>
-              <p className="text-gray-600 mb-4">
-                Complete digital case filing, tracking, and management system for all court types.
+              <h3 className="text-xl font-bold text-botswanaBlack-900 mb-4">Digital Case Management</h3>
+              <p className="text-botswanaBlack-600 mb-6 leading-relaxed">
+                Complete digital case filing, tracking, and management system for all court types 
+                with real-time updates and comprehensive search capabilities.
               </p>
-              <ul className="text-sm text-gray-500 space-y-1">
-                <li>• Electronic case registration</li>
-                <li>• Real-time status tracking</li>
-                <li>• Document management</li>
-                <li>• Case history tracking</li>
+              <ul className="text-sm text-botswanaBlack-500 space-y-2">
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-botswana-500 rounded-full mr-3"></span>
+                  Electronic case registration
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-botswana-500 rounded-full mr-3"></span>
+                  Real-time status tracking
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-botswana-500 rounded-full mr-3"></span>
+                  Document management
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-botswana-500 rounded-full mr-3"></span>
+                  Case history tracking
+                </li>
               </ul>
             </div>
 
-            {/* OCR Technology */}
-            <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 hover:shadow-lg transition-shadow">
-              <div className="flex items-center mb-4">
-                <div className="p-2 bg-green-100 rounded-lg">
-                  <div className="h-6 w-6 text-green-600">🔍</div>
-                </div>
-                <h3 className="ml-3 text-xl font-semibold text-gray-900">Document Digitization</h3>
+            {/* Document Digitization */}
+            <div className="feature-card">
+              <div className="feature-icon bg-gradient-to-br from-success-500 to-success-600 text-white">
+                🔍
               </div>
-              <p className="text-gray-600 mb-4">
-                Convert handwritten documents and forms to digital text with high accuracy.
+              <h3 className="text-xl font-bold text-botswanaBlack-900 mb-4">Document Digitization</h3>
+              <p className="text-botswanaBlack-600 mb-6 leading-relaxed">
+                Convert handwritten documents and forms to digital text with high accuracy 
+                using advanced OCR technology and multi-language support.
               </p>
-              <ul className="text-sm text-gray-500 space-y-1">
-                <li>• Handwriting recognition</li>
-                <li>• Multi-language support</li>
-                <li>• Batch processing</li>
-                <li>• Searchable documents</li>
+              <ul className="text-sm text-botswanaBlack-500 space-y-2">
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-success-500 rounded-full mr-3"></span>
+                  Handwriting recognition
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-success-500 rounded-full mr-3"></span>
+                  Multi-language support
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-success-500 rounded-full mr-3"></span>
+                  Batch processing
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-success-500 rounded-full mr-3"></span>
+                  Searchable documents
+                </li>
               </ul>
             </div>
 
-            {/* Court Scheduling */}
-            <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 hover:shadow-lg transition-shadow">
-              <div className="flex items-center mb-4">
-                <div className="p-2 bg-purple-100 rounded-lg">
-                  <div className="h-6 w-6 text-purple-600">📅</div>
-                </div>
-                <h3 className="ml-3 text-xl font-semibold text-gray-900">Hearing Management</h3>
+            {/* Hearing Management */}
+            <div className="feature-card">
+              <div className="feature-icon bg-gradient-to-br from-accent-500 to-accent-600 text-white">
+                📅
               </div>
-              <p className="text-gray-600 mb-4">
-                Automated hearing scheduling with conflict resolution and resource allocation.
+              <h3 className="text-xl font-bold text-botswanaBlack-900 mb-4">Hearing Management</h3>
+              <p className="text-botswanaBlack-600 mb-6 leading-relaxed">
+                Automated hearing scheduling with conflict resolution and resource allocation 
+                for efficient court operations and calendar management.
               </p>
-              <ul className="text-sm text-gray-500 space-y-1">
-                <li>• Automated scheduling</li>
-                <li>• Conflict detection</li>
-                <li>• Resource management</li>
-                <li>• Notification system</li>
+              <ul className="text-sm text-botswanaBlack-500 space-y-2">
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-accent-500 rounded-full mr-3"></span>
+                  Automated scheduling
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-accent-500 rounded-full mr-3"></span>
+                  Conflict detection
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-accent-500 rounded-full mr-3"></span>
+                  Resource management
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-accent-500 rounded-full mr-3"></span>
+                  Notification system
+                </li>
               </ul>
             </div>
 
-            {/* User Management */}
-            <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 hover:shadow-lg transition-shadow">
-              <div className="flex items-center mb-4">
-                <div className="p-2 bg-orange-100 rounded-lg">
-                  <div className="h-6 w-6 text-orange-600">👥</div>
-                </div>
-                <h3 className="ml-3 text-xl font-semibold text-gray-900">Administrative Control</h3>
+            {/* Administrative Control */}
+            <div className="feature-card">
+              <div className="feature-icon bg-gradient-to-br from-warning-500 to-warning-600 text-white">
+                👥
               </div>
-              <p className="text-gray-600 mb-4">
-                Court administrators manage user access and permissions for their jurisdiction.
+              <h3 className="text-xl font-bold text-botswanaBlack-900 mb-4">Administrative Control</h3>
+              <p className="text-botswanaBlack-600 mb-6 leading-relaxed">
+                Court administrators manage user access and permissions for their jurisdiction 
+                with comprehensive role-based access control.
               </p>
-              <ul className="text-sm text-gray-500 space-y-1">
-                <li>• Role-based permissions</li>
-                <li>• Court-specific access</li>
-                <li>• User management</li>
-                <li>• Audit logging</li>
+              <ul className="text-sm text-botswanaBlack-500 space-y-2">
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-warning-500 rounded-full mr-3"></span>
+                  Role-based permissions
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-warning-500 rounded-full mr-3"></span>
+                  Court-specific access
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-warning-500 rounded-full mr-3"></span>
+                  User management
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-warning-500 rounded-full mr-3"></span>
+                  Audit logging
+                </li>
               </ul>
             </div>
 
-            {/* Security & Compliance */}
-            <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 hover:shadow-lg transition-shadow">
-              <div className="flex items-center mb-4">
-                <div className="p-2 bg-red-100 rounded-lg">
-                  <div className="h-6 w-6 text-red-600">🔒</div>
-                </div>
-                <h3 className="ml-3 text-xl font-semibold text-gray-900">Government Security</h3>
+            {/* Government Security */}
+            <div className="feature-card">
+              <div className="feature-icon bg-gradient-to-br from-error-500 to-error-600 text-white">
+                🔒
               </div>
-              <p className="text-gray-600 mb-4">
-                Enterprise-grade security compliant with Botswana government standards.
+              <h3 className="text-xl font-bold text-botswanaBlack-900 mb-4">Government Security</h3>
+              <p className="text-botswanaBlack-600 mb-6 leading-relaxed">
+                Enterprise-grade security compliant with Botswana government standards 
+                and data protection regulations.
               </p>
-              <ul className="text-sm text-gray-500 space-y-1">
-                <li>• Government-grade encryption</li>
-                <li>• Data protection compliance</li>
-                <li>• Regular security audits</li>
-                <li>• Secure backup systems</li>
+              <ul className="text-sm text-botswanaBlack-500 space-y-2">
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-error-500 rounded-full mr-3"></span>
+                  Government-grade encryption
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-error-500 rounded-full mr-3"></span>
+                  Data protection compliance
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-error-500 rounded-full mr-3"></span>
+                  Regular security audits
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-error-500 rounded-full mr-3"></span>
+                  Secure backup systems
+                </li>
               </ul>
             </div>
 
-            {/* Analytics & Reporting */}
-            <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 hover:shadow-lg transition-shadow">
-              <div className="flex items-center mb-4">
-                <div className="p-2 bg-indigo-100 rounded-lg">
-                  <div className="h-6 w-6 text-indigo-600">📊</div>
-                </div>
-                <h3 className="ml-3 text-xl font-semibold text-gray-900">Judicial Analytics</h3>
+            {/* Judicial Analytics */}
+            <div className="feature-card">
+              <div className="feature-icon bg-gradient-to-br from-botswana-700 to-botswana-800 text-white">
+                📊
               </div>
-              <p className="text-gray-600 mb-4">
-                Comprehensive reporting and analytics for court performance monitoring.
+              <h3 className="text-xl font-bold text-botswanaBlack-900 mb-4">Judicial Analytics</h3>
+              <p className="text-botswanaBlack-600 mb-6 leading-relaxed">
+                Comprehensive reporting and analytics for court performance monitoring 
+                and government reporting requirements.
               </p>
-              <ul className="text-sm text-gray-500 space-y-1">
-                <li>• Performance metrics</li>
-                <li>• Case statistics</li>
-                <li>• Judicial reports</li>
-                <li>• Government reporting</li>
+              <ul className="text-sm text-botswanaBlack-500 space-y-2">
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-botswana-700 rounded-full mr-3"></span>
+                  Performance metrics
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-botswana-700 rounded-full mr-3"></span>
+                  Case statistics
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-botswana-700 rounded-full mr-3"></span>
+                  Judicial reports
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-botswana-700 rounded-full mr-3"></span>
+                  Government reporting
+                </li>
               </ul>
             </div>
           </div>
@@ -239,13 +350,13 @@ export default function HomePage() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-gray-50">
+      <section id="about" className="relative py-20 bg-gradient-to-br from-botswana-50 to-botswana-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-botswanaBlack-900 mb-6">
               About JusticeConnect
             </h2>
-            <div className="max-w-4xl mx-auto text-lg text-gray-600 space-y-6">
+            <div className="max-w-4xl mx-auto text-lg text-botswanaBlack-600 space-y-6 leading-relaxed">
               <p>
                 JusticeConnect is the official digital platform of the Botswana Justice Department, 
                 designed to modernize and streamline court operations across the country's judicial system.
@@ -265,42 +376,78 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer id="contact" className="bg-gray-900 text-white py-12">
+      <footer id="contact" className="relative bg-botswanaBlack-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <div className="flex items-center mb-4">
-                <div className="h-8 w-8 text-blue-400">⚖️</div>
-                <span className="ml-2 text-xl font-bold">JusticeConnect</span>
+              <div className="flex items-center mb-6">
+                <div className="h-10 w-10 bg-gradient-to-br from-botswana-500 to-botswana-600 rounded-xl flex items-center justify-center text-white font-bold text-lg">
+                  ⚖️
+                </div>
+                <span className="ml-3 text-2xl font-bold">JusticeConnect</span>
               </div>
-              <p className="text-gray-400 mb-4">
+              <p className="text-botswana-200 mb-4 leading-relaxed">
                 Official digital platform of the Botswana Justice Department.
               </p>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-botswana-300">
                 © 2024 Botswana Justice Department. All rights reserved.
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-4">Government Links</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="https://www.gov.bw" className="hover:text-white transition-colors">Government Portal</Link></li>
-                <li><Link href="https://www.justice.gov.bw" className="hover:text-white transition-colors">Justice Department</Link></li>
-                <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-                <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Use</Link></li>
+              <h3 className="text-lg font-semibold mb-6 text-white">Government Links</h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="https://www.gov.bw" className="text-botswana-200 hover:text-white transition-colors duration-200">
+                    Government Portal
+                  </Link>
+                </li>
+                <li>
+                  <Link href="https://www.justice.gov.bw" className="text-botswana-200 hover:text-white transition-colors duration-200">
+                    Justice Department
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/privacy" className="text-botswana-200 hover:text-white transition-colors duration-200">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/terms" className="text-botswana-200 hover:text-white transition-colors duration-200">
+                    Terms of Use
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-4">Support</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="/help" className="hover:text-white transition-colors">Help Center</Link></li>
-                <li><Link href="/contact" className="hover:text-white transition-colors">Contact IT Support</Link></li>
-                <li><Link href="/training" className="hover:text-white transition-colors">Training Materials</Link></li>
-                <li><Link href="/status" className="hover:text-white transition-colors">System Status</Link></li>
+              <h3 className="text-lg font-semibold mb-6 text-white">Support</h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/help" className="text-botswana-200 hover:text-white transition-colors duration-200">
+                    Help Center
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-botswana-200 hover:text-white transition-colors duration-200">
+                    Contact IT Support
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/training" className="text-botswana-200 hover:text-white transition-colors duration-200">
+                    Training Materials
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/status" className="text-botswana-200 hover:text-white transition-colors duration-200">
+                    System Status
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>Built for the Botswana Justice Department • Secure • Reliable • Government-Grade</p>
+          <div className="border-t border-botswanaBlack-700 mt-12 pt-8 text-center">
+            <p className="text-botswana-300">
+              Built for the Botswana Justice Department • Secure • Reliable • Government-Grade
+            </p>
           </div>
         </div>
       </footer>
