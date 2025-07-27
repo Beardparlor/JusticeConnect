@@ -2,37 +2,29 @@ import Link from 'next/link'
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-botswana-50 via-white to-botswana-100 relative overflow-hidden" 
-         style={{background: 'linear-gradient(135deg, #f0f9ff 0%, #ffffff 50%, #e0f2fe 100%)'}}>
+    <div className="min-h-screen bg-gradient-to-br from-botswana-50 via-white to-botswana-100 relative overflow-hidden" style={{background: 'linear-gradient(135deg, #f0f9ff 0%, #ffffff 50%, #e0f2fe 100%)'}}>
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-botswana-pattern opacity-30"></div>
       
       {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-botswana-200 rounded-full opacity-20 animate-float" 
-           style={{backgroundColor: '#bae6fd', borderRadius: '50%', opacity: 0.2}}></div>
-      <div className="absolute top-40 right-20 w-16 h-16 bg-botswana-300 rounded-full opacity-30 animate-float" 
-           style={{backgroundColor: '#7dd3fc', borderRadius: '50%', opacity: 0.3, animationDelay: '1s'}}></div>
-      <div className="absolute bottom-40 left-20 w-12 h-12 bg-botswana-400 rounded-full opacity-40 animate-float" 
-           style={{backgroundColor: '#38bdf8', borderRadius: '50%', opacity: 0.4, animationDelay: '2s'}}></div>
+      <div className="absolute top-20 left-10 w-20 h-20 bg-botswana-200 rounded-full opacity-20 animate-float" style={{backgroundColor: '#bae6fd', borderRadius: '50%', opacity: 0.2}}></div>
+      <div className="absolute top-40 right-20 w-16 h-16 bg-botswana-300 rounded-full opacity-30 animate-float" style={{backgroundColor: '#7dd3fc', borderRadius: '50%', opacity: 0.3, animationDelay: '1s'}}></div>
+      <div className="absolute bottom-40 left-20 w-12 h-12 bg-botswana-400 rounded-full opacity-40 animate-float" style={{backgroundColor: '#38bdf8', borderRadius: '50%', opacity: 0.4, animationDelay: '2s'}}></div>
 
       {/* Test Element to Verify Styling */}
-      <div className="fixed top-4 right-4 bg-botswana-500 text-white px-4 py-2 rounded-lg shadow-botswana animate-glow"
-           style={{backgroundColor: '#0ea5e9', color: 'white', padding: '8px 16px', borderRadius: '8px', boxShadow: '0 4px 6px -1px rgba(14, 165, 233, 0.1)'}}>
+      <div className="fixed top-4 right-4 bg-botswana-500 text-white px-4 py-2 rounded-lg shadow-botswana animate-glow" style={{backgroundColor: '#0ea5e9', color: 'white', padding: '8px 16px', borderRadius: '8px', boxShadow: '0 4px 6px -1px rgba(14, 165, 233, 0.1)'}}>
         🎨 Styling Active
       </div>
 
       {/* Header */}
-      <header className="relative bg-white/90 backdrop-blur-sm shadow-botswana border-b border-botswana-200"
-               style={{backgroundColor: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(8px)', boxShadow: '0 4px 6px -1px rgba(14, 165, 233, 0.1)', borderBottom: '1px solid #bae6fd'}}>
+      <header className="relative bg-white/90 backdrop-blur-sm shadow-botswana border-b border-botswana-200" style={{backgroundColor: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(8px)', boxShadow: '0 4px 6px -1px rgba(14, 165, 233, 0.1)', borderBottom: '1px solid #bae6fd'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
-              <div className="h-10 w-10 bg-gradient-to-br from-botswana-500 to-botswana-600 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-botswana animate-glow"
-                   style={{background: 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(14, 165, 233, 0.1)'}}>
+              <div className="h-10 w-10 bg-gradient-to-br from-botswana-500 to-botswana-600 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-botswana animate-glow" style={{background: 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(14, 165, 233, 0.1)'}}>
                 ⚖️
               </div>
-              <span className="ml-3 text-2xl font-bold gradient-text" 
-                    style={{background: 'linear-gradient(135deg, #0284c7 0%, #075985 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+              <span className="ml-3 text-2xl font-bold gradient-text" style={{background: 'linear-gradient(135deg, #0284c7 0%, #075985 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
                 JusticeConnect
               </span>
             </div>
@@ -62,17 +54,14 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
             <div className="mb-8">
-              <h1 className="heading-responsive font-bold text-botswanaBlack-900 mb-6"
-                  style={{fontSize: '3rem', fontWeight: 'bold', color: '#0f172a', marginBottom: '24px'}}>
+              <h1 className="heading-responsive font-bold text-botswanaBlack-900 mb-6" style={{fontSize: '3rem', fontWeight: 'bold', color: '#0f172a', marginBottom: '24px'}}>
                 Botswana
-                <span className="gradient-text" 
-                      style={{background: 'linear-gradient(135deg, #0284c7 0%, #075985 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+                <span className="gradient-text" style={{background: 'linear-gradient(135deg, #0284c7 0%, #075985 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
                   {' '}Justice{' '}
                 </span>
                 System
               </h1>
-              <p className="text-responsive text-botswanaBlack-600 mb-8 max-w-3xl mx-auto leading-relaxed"
-                 style={{fontSize: '1.125rem', color: '#475569', maxWidth: '48rem', margin: '0 auto', lineHeight: '1.75'}}>
+              <p className="text-responsive text-botswanaBlack-600 mb-8 max-w-3xl mx-auto leading-relaxed" style={{fontSize: '1.125rem', color: '#475569', maxWidth: '48rem', margin: '0 auto', lineHeight: '1.75'}}>
                 JusticeConnect is the official digital platform of the Botswana Justice Department. 
                 Access your court's case management system and streamline judicial operations with 
                 secure, efficient digital tools.
@@ -80,8 +69,7 @@ export default function HomePage() {
             </div>
             
             <div className="mb-16">
-              <h2 className="text-3xl font-bold text-botswanaBlack-800 mb-8"
-                  style={{fontSize: '1.875rem', fontWeight: 'bold', color: '#1e293b', marginBottom: '32px'}}>
+              <h2 className="text-3xl font-bold text-botswanaBlack-800 mb-8" style={{fontSize: '1.875rem', fontWeight: 'bold', color: '#1e293b', marginBottom: '32px'}}>
                 Select Your Court
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -90,11 +78,10 @@ export default function HomePage() {
                   className="court-card group"
                   style={{backgroundColor: 'white', border: '2px solid #bae6fd', borderRadius: '16px', padding: '32px', textAlign: 'center', textDecoration: 'none', transition: 'all 0.3s'}}
                 >
-                  <div className="court-icon bg-gradient-to-br from-botswana-500 to-botswana-600 text-white"
-                       style={{background: 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)', fontSize: '2rem', marginBottom: '16px'}}>
+                  <div className="court-icon bg-gradient-to-br from-botswana-500 to-botswana-600 text-white" style={{background: 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)', fontSize: '2rem', marginBottom: '16px'}}>
                     🏛️
                   </div>
-                  <h3 className="text-xl font-bold text-botswanaBlack-900 mb-3" style={{fontSize: '1.25rem', fontWeight: 'bold', color: '#0f172a', marginBottom: '12px'}>High Court of Appeal</h3>
+                  <h3 className="text-xl font-bold text-botswanaBlack-900 mb-3" style={{fontSize: '1.25rem', fontWeight: 'bold', color: '#0f172a', marginBottom: '12px'}}>High Court of Appeal</h3>
                   <p className="text-botswanaBlack-600" style={{color: '#475569'}}>Supreme appellate jurisdiction</p>
                   <div className="mt-4 text-botswana-500 font-medium group-hover:text-botswana-600 transition-colors" style={{marginTop: '16px', color: '#0ea5e9', fontWeight: '500'}}>
                     Access Court →
@@ -106,11 +93,10 @@ export default function HomePage() {
                   className="court-card group"
                   style={{backgroundColor: 'white', border: '2px solid #bae6fd', borderRadius: '16px', padding: '32px', textAlign: 'center', textDecoration: 'none', transition: 'all 0.3s'}}
                 >
-                  <div className="court-icon bg-gradient-to-br from-botswana-500 to-botswana-600 text-white"
-                       style={{background: 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)', fontSize: '2rem', marginBottom: '16px'}}>
+                  <div className="court-icon bg-gradient-to-br from-botswana-500 to-botswana-600 text-white" style={{background: 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)', fontSize: '2rem', marginBottom: '16px'}}>
                     ⚖️
                   </div>
-                  <h3 className="text-xl font-bold text-botswanaBlack-900 mb-3" style={{fontSize: '1.25rem', fontWeight: 'bold', color: '#0f172a', marginBottom: '12px'}>High Court</h3>
+                  <h3 className="text-xl font-bold text-botswanaBlack-900 mb-3" style={{fontSize: '1.25rem', fontWeight: 'bold', color: '#0f172a', marginBottom: '12px'}}>High Court</h3>
                   <p className="text-botswanaBlack-600" style={{color: '#475569'}}>Superior court jurisdiction</p>
                   <div className="mt-4 text-botswana-500 font-medium group-hover:text-botswana-600 transition-colors" style={{marginTop: '16px', color: '#0ea5e9', fontWeight: '500'}}>
                     Access Court →
@@ -122,11 +108,10 @@ export default function HomePage() {
                   className="court-card group"
                   style={{backgroundColor: 'white', border: '2px solid #bae6fd', borderRadius: '16px', padding: '32px', textAlign: 'center', textDecoration: 'none', transition: 'all 0.3s'}}
                 >
-                  <div className="court-icon bg-gradient-to-br from-botswana-500 to-botswana-600 text-white"
-                       style={{background: 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)', fontSize: '2rem', marginBottom: '16px'}}>
+                  <div className="court-icon bg-gradient-to-br from-botswana-500 to-botswana-600 text-white" style={{background: 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)', fontSize: '2rem', marginBottom: '16px'}}>
                     🏢
                   </div>
-                  <h3 className="text-xl font-bold text-botswanaBlack-900 mb-3" style={{fontSize: '1.25rem', fontWeight: 'bold', color: '#0f172a', marginBottom: '12px'}>Industrial Court</h3>
+                  <h3 className="text-xl font-bold text-botswanaBlack-900 mb-3" style={{fontSize: '1.25rem', fontWeight: 'bold', color: '#0f172a', marginBottom: '12px'}}>Industrial Court</h3>
                   <p className="text-botswanaBlack-600" style={{color: '#475569'}}>Labor and employment disputes</p>
                   <div className="mt-4 text-botswana-500 font-medium group-hover:text-botswana-600 transition-colors" style={{marginTop: '16px', color: '#0ea5e9', fontWeight: '500'}}>
                     Access Court →
@@ -138,11 +123,10 @@ export default function HomePage() {
                   className="court-card group"
                   style={{backgroundColor: 'white', border: '2px solid #bae6fd', borderRadius: '16px', padding: '32px', textAlign: 'center', textDecoration: 'none', transition: 'all 0.3s'}}
                 >
-                  <div className="court-icon bg-gradient-to-br from-botswana-500 to-botswana-600 text-white"
-                       style={{background: 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)', fontSize: '2rem', marginBottom: '16px'}}>
+                  <div className="court-icon bg-gradient-to-br from-botswana-500 to-botswana-600 text-white" style={{background: 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)', fontSize: '2rem', marginBottom: '16px'}}>
                     📋
                   </div>
-                  <h3 className="text-xl font-bold text-botswanaBlack-900 mb-3" style={{fontSize: '1.25rem', fontWeight: 'bold', color: '#0f172a', marginBottom: '12px'}>Magistrate Court</h3>
+                  <h3 className="text-xl font-bold text-botswanaBlack-900 mb-3" style={{fontSize: '1.25rem', fontWeight: 'bold', color: '#0f172a', marginBottom: '12px'}}>Magistrate Court</h3>
                   <p className="text-botswanaBlack-600" style={{color: '#475569'}}>Lower court jurisdiction</p>
                   <div className="mt-4 text-botswana-500 font-medium group-hover:text-botswana-600 transition-colors" style={{marginTop: '16px', color: '#0ea5e9', fontWeight: '500'}}>
                     Access Court →
@@ -154,11 +138,10 @@ export default function HomePage() {
                   className="court-card group"
                   style={{backgroundColor: 'white', border: '2px solid #bae6fd', borderRadius: '16px', padding: '32px', textAlign: 'center', textDecoration: 'none', transition: 'all 0.3s'}}
                 >
-                  <div className="court-icon bg-gradient-to-br from-botswana-500 to-botswana-600 text-white"
-                       style={{background: 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)', fontSize: '2rem', marginBottom: '16px'}}>
+                  <div className="court-icon bg-gradient-to-br from-botswana-500 to-botswana-600 text-white" style={{background: 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)', fontSize: '2rem', marginBottom: '16px'}}>
                     🌿
                   </div>
-                  <h3 className="text-xl font-bold text-botswanaBlack-900 mb-3" style={{fontSize: '1.25rem', fontWeight: 'bold', color: '#0f172a', marginBottom: '12px'}>Customary High Court of Appeal</h3>
+                  <h3 className="text-xl font-bold text-botswanaBlack-900 mb-3" style={{fontSize: '1.25rem', fontWeight: 'bold', color: '#0f172a', marginBottom: '12px'}}>Customary High Court of Appeal</h3>
                   <p className="text-botswanaBlack-600" style={{color: '#475569'}}>Customary law appellate</p>
                   <div className="mt-4 text-botswana-500 font-medium group-hover:text-botswana-600 transition-colors" style={{marginTop: '16px', color: '#0ea5e9', fontWeight: '500'}}>
                     Access Court →
@@ -170,11 +153,10 @@ export default function HomePage() {
                   className="court-card group"
                   style={{backgroundColor: 'white', border: '2px solid #bae6fd', borderRadius: '16px', padding: '32px', textAlign: 'center', textDecoration: 'none', transition: 'all 0.3s'}}
                 >
-                  <div className="court-icon bg-gradient-to-br from-botswana-500 to-botswana-600 text-white"
-                       style={{background: 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)', fontSize: '2rem', marginBottom: '16px'}}>
+                  <div className="court-icon bg-gradient-to-br from-botswana-500 to-botswana-600 text-white" style={{background: 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)', fontSize: '2rem', marginBottom: '16px'}}>
                     🏘️
                   </div>
-                  <h3 className="text-xl font-bold text-botswanaBlack-900 mb-3" style={{fontSize: '1.25rem', fontWeight: 'bold', color: '#0f172a', marginBottom: '12px'}>Customary Court</h3>
+                  <h3 className="text-xl font-bold text-botswanaBlack-900 mb-3" style={{fontSize: '1.25rem', fontWeight: 'bold', color: '#0f172a', marginBottom: '12px'}}>Customary Court</h3>
                   <p className="text-botswanaBlack-600" style={{color: '#475569'}}>Traditional law jurisdiction</p>
                   <div className="mt-4 text-botswana-500 font-medium group-hover:text-botswana-600 transition-colors" style={{marginTop: '16px', color: '#0ea5e9', fontWeight: '500'}}>
                     Access Court →
@@ -410,14 +392,12 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer id="contact" className="relative bg-botswanaBlack-900 text-white py-16"
-              style={{backgroundColor: '#0f172a', color: 'white', padding: '64px 0'}}>
+      <footer id="contact" className="relative bg-botswanaBlack-900 text-white py-16" style={{backgroundColor: '#0f172a', color: 'white', padding: '64px 0'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center mb-6">
-                <div className="h-10 w-10 bg-gradient-to-br from-botswana-500 to-botswana-600 rounded-xl flex items-center justify-center text-white font-bold text-lg"
-                     style={{background: 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)', borderRadius: '12px'}}>
+                <div className="h-10 w-10 bg-gradient-to-br from-botswana-500 to-botswana-600 rounded-xl flex items-center justify-center text-white font-bold text-lg" style={{background: 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)', borderRadius: '12px'}}>
                   ⚖️
                 </div>
                 <span className="ml-3 text-2xl font-bold" style={{fontSize: '1.5rem', fontWeight: 'bold'}}>JusticeConnect</span>
