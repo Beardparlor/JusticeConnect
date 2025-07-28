@@ -1,20 +1,7 @@
 "use client";
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { 
-  Menu, 
-  X, 
-  Scale, 
-  ArrowRight,
-  Home,
-  FileText,
-  Calendar,
-  Users,
-  Settings,
-  HelpCircle
-} from "lucide-react";
+import { Menu, X, Scale, ArrowRight, Home, FileText, Calendar, Users, Settings, HelpCircle } from "lucide-react";
 
 interface MobileNavProps {
   className?: string;
@@ -22,95 +9,89 @@ interface MobileNavProps {
 
 export function MobileNav({ className }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleMenu = () => setIsOpen(!isOpen);
-
+  
   const navItems = [
-    { icon: Home, label: "Home", href: "#" },
-    { icon: FileText, label: "Features", href: "#features" },
-    { icon: Calendar, label: "Schedule", href: "#" },
-    { icon: Users, label: "About", href: "#about" },
-    { icon: Settings, label: "Settings", href: "#" },
-    { icon: HelpCircle, label: "Contact", href: "#contact" },
+    { href: "#features", label: "Features", icon: FileText },
+    { href: "#about", label: "About", icon: HelpCircle },
+    { href: "#contact", label: "Contact", icon: Users },
   ];
 
   return (
-    <div className={`md:hidden ${className}`}>
-      {/* Mobile Menu Button */}
-      <Button
-        variant="ghost"
-        size="sm"
-        onClick={toggleMenu}
-        className="relative z-50 p-2 hover:bg-botswana-50"
+    <div className={`lg:hidden ${className}`}>
+      <Button 
+        variant="ghost" 
+        size="sm" 
+        onClick={toggleMenu} 
+        className="relative z-50 p-2 hover:bg-botswana-50 rounded-xl transition-all duration-300"
+        aria-label="Toggle mobile menu"
       >
         {isOpen ? (
-          <X className="w-6 h-6 text-botswana-700" />
+          <X className="w-6 h-6 text-botswana-700 transition-transform duration-300" />
         ) : (
-          <Menu className="w-6 h-6 text-botswana-700" />
+          <Menu className="w-6 h-6 text-botswana-700 transition-transform duration-300" />
         )}
       </Button>
-
-      {/* Mobile Menu Overlay */}
+      
       {isOpen && (
         <div className="fixed inset-0 z-40">
           {/* Backdrop */}
           <div 
-            className="absolute inset-0 bg-black/20 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-300" 
             onClick={toggleMenu}
           />
           
           {/* Menu Panel */}
-          <div className="absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl">
-            <div className="flex flex-col h-full">
-              {/* Header */}
-              <div className="flex items-center justify-between p-6 border-b border-botswana-200">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-botswana-500 to-botswana-600 rounded-lg flex items-center justify-center">
-                    <Scale className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <h2 className="text-lg font-bold text-botswana-900">JusticeConnect</h2>
-                    <p className="text-xs text-botswana-600">Botswana Justice Department</p>
-                  </div>
+          <div className="absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-white/95 backdrop-blur-xl shadow-2xl border-l border-botswana-200/50">
+            {/* Header */}
+            <div className="flex items-center justify-between p-6 border-b border-botswana-200/50">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-botswana-500 to-botswana-600 rounded-xl flex items-center justify-center">
+                  <Scale className="w-6 h-6 text-white" />
                 </div>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={toggleMenu}
-                  className="p-2 hover:bg-botswana-50"
-                >
-                  <X className="w-5 h-5 text-botswana-700" />
-                </Button>
+                <span className="text-xl font-bold text-botswana-900">JusticeConnect</span>
               </div>
-
-              {/* Navigation Items */}
-              <nav className="flex-1 p-6">
-                <ul className="space-y-2">
-                  {navItems.map((item, index) => (
-                    <li key={item.label}>
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                onClick={toggleMenu}
+                className="p-2 hover:bg-botswana-50 rounded-lg"
+              >
+                <X className="w-5 h-5 text-botswana-700" />
+              </Button>
+            </div>
+            
+            {/* Navigation Items */}
+            <nav className="p-6">
+              <ul className="space-y-4">
+                {navItems.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <li key={item.href}>
                       <a
                         href={item.href}
-                        className="flex items-center space-x-3 p-3 rounded-xl text-botswana-700 hover:bg-botswana-50 hover:text-botswana-900 transition-all duration-200"
+                        className="flex items-center space-x-3 p-4 rounded-xl text-botswana-700 hover:text-botswana-900 hover:bg-botswana-50 transition-all duration-300 group"
                         onClick={toggleMenu}
                       >
-                        <item.icon className="w-5 h-5" />
-                        <span className="font-medium">{item.label}</span>
+                        <Icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                        <span className="font-medium text-lg">{item.label}</span>
+                        <ArrowRight className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
                       </a>
                     </li>
-                  ))}
-                </ul>
-              </nav>
-
-              {/* Footer */}
-              <div className="p-6 border-t border-botswana-200">
-                <Button className="w-full bg-botswana-500 hover:bg-botswana-600 text-white">
-                  Get Started
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-                <p className="text-xs text-botswana-500 mt-3 text-center">
-                  © 2024 JusticeConnect
-                </p>
-              </div>
+                  );
+                })}
+              </ul>
+            </nav>
+            
+            {/* CTA Section */}
+            <div className="p-6 border-t border-botswana-200/50 mt-auto">
+              <Button 
+                className="w-full btn-beautiful px-6 py-4 text-lg font-semibold shadow-lg hover:shadow-xl"
+                onClick={toggleMenu}
+              >
+                Get Started
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
             </div>
           </div>
         </div>

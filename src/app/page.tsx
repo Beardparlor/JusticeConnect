@@ -38,8 +38,9 @@ export default function Home() {
       {/* Navigation */}
       <nav className="nav-glass border-b border-botswana-200/50 sticky top-0 z-50 backdrop-blur-xl">
         <div className="container mx-auto px-6 py-5">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4 animate-fade-in-up">
+          <div className="nav-container">
+            {/* Logo Section - Left */}
+            <div className="nav-logo flex items-center space-x-4 animate-fade-in-up">
               <div className="w-16 h-16 bg-gradient-to-br from-botswana-500 to-botswana-600 rounded-3xl flex items-center justify-center hover-lift shadow-2xl relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <Scale className="w-9 h-9 text-white relative z-10" />
@@ -49,7 +50,9 @@ export default function Home() {
                 <p className="text-sm text-botswana-600 font-medium">Botswana Justice Department</p>
               </div>
             </div>
-            <div className="hidden lg:flex items-center space-x-12">
+
+            {/* Navigation Menu - Center */}
+            <div className="nav-menu hidden lg:flex items-center space-x-12">
               <a href="#features" className="text-botswana-700 hover:text-botswana-900 transition-all duration-300 hover-lift font-medium text-lg relative group">
                 Features
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-botswana-500 group-hover:w-full transition-all duration-300"></span>
@@ -62,11 +65,17 @@ export default function Home() {
                 Contact
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-botswana-500 group-hover:w-full transition-all duration-300"></span>
               </a>
-              <Button className="btn-beautiful px-10 py-4 text-lg shadow-2xl hover:shadow-3xl">
+            </div>
+
+            {/* CTA Button - Right */}
+            <div className="nav-cta hidden lg:flex items-center">
+              <Button className="btn-beautiful px-10 py-4 text-lg shadow-2xl hover:shadow-3xl group">
                 Get Started
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
+
+            {/* Mobile Menu */}
             <MobileNav />
           </div>
         </div>
