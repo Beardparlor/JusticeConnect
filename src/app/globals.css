@@ -703,6 +703,13 @@ section {
   box-shadow: var(--shadow-medium);
 }
 
+/* Background patterns */
+.bg-dots {
+  background-image: radial-gradient(circle, #0ea5e9 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.03;
+}
+
 /* Beautiful scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
